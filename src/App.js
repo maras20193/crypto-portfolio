@@ -6,21 +6,28 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import SideStats from './components/SideStats/SideStats';
+import CryptoList from './components/CryptoList/CryptoList';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Header/>
-        <Switch>
-          <Route exact path="/">
-            <div>main Page with crypto</div>
-          </Route>
-          <Route path="/portfolio">
-            <div>Portrolio</div>
-          </Route>
-        </Switch>
-        </Router>
+        {/* <div className="gradient" /> */}
+        <div className="mainBoard">
+          <SideStats/>
+          <Switch>
+            <Route exact path="/">
+              <CryptoList/>
+            </Route>
+            <Route path="/portfolio">
+              <div>Portrolio</div>
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+
     </div>
   );
 }

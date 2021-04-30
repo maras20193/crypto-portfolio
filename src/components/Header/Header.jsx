@@ -18,8 +18,9 @@ const Header = () => {
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/BTC_Logo.svg/2000px-BTC_Logo.svg.png" alt="" className="header__logo"/>
       </div>
       <ul className="header__nav">
-        <li><NavLink exact to="/">Cryptos</NavLink></li>
-        <li><NavLink to="/portfolio">Portfolio</NavLink></li>
+        <li><NavLink exact to="/">Crypto</NavLink></li>
+        <li><NavLink to="/watchlist">Watch</NavLink></li>
+        <li><NavLink to="/portfolio">Portf</NavLink></li>
         
       </ul>
       <div className="header__searchBar">
@@ -32,8 +33,7 @@ const Header = () => {
       </div>
       <div className="header__login">
         <Button 
-        variant="contained" color="primary"
-        disableRipple={true}>Log in</Button>
+        variant="contained" color="primary">Log in</Button>
       </div>
     </div>
     );

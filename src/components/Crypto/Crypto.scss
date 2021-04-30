@@ -1,0 +1,59 @@
+.cryptoRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  border-bottom: 2px solid whitesmoke;
+
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;  
+
+  
+  @media(min-width:1024px) {
+    padding-left: 100px;
+  }
+
+
+  &:hover {
+    background-color: whitesmoke;
+    
+  }
+
+  &__logo {
+    width: 32px;
+    height: 32px;
+    margin-right: 20px;
+    margin-left: 10px;
+
+    @media(min-width:1024px) {
+      margin-right: 40px;
+    }
+
+    img {
+      width: 32px;
+      object-fit: contain;
+    }
+  }
+
+  &__info {
+    flex-basis:33%;
+    max-width: 200px;
+    font-weight: 500;
+
+    &--changeToday {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--price {
+      text-align: end;
+      margin-right: 30px;
+      max-width: 100px;
+    }
+
+  }
+
+}
