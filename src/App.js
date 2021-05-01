@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import SideStats from './components/SideStats/SideStats';
 import CryptoList from './components/CryptoList/CryptoList';
+import ModalMy from './components/Modal/Modal';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           </Switch>
         </div>
       </Router>
+      {/* <ModalMy/> */}
 
     </div>
   );

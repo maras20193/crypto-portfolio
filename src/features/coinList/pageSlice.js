@@ -2,6 +2,7 @@ import {  createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   showingPageIndex: 0,
+  modalIsShow: false,
 };
 
 export const pageSlice = createSlice({
@@ -14,8 +15,8 @@ export const pageSlice = createSlice({
     BACK: state => {
       state.showingPageIndex -=1;
     },
-    CHOOSE_PAGE: (state, action) => {
-      state.showingPageIndex = action.payload
+    TOGGLE_MODAL: state => {
+      state.modalIsShow = !state.modalIsShow
     }
   }
 })
@@ -23,5 +24,7 @@ export const pageSlice = createSlice({
 export const { NEXT, BACK, CHOOSE_PAGE } = pageSlice.actions
 
 export const selectPageIndex = state => state.page.showingPageIndex
+
+export const selectModalIsShown = state => state.page.modalIsShow 
 
 export default pageSlice.reducer

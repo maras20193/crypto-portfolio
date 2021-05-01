@@ -3,15 +3,18 @@ import React, { useEffect, useState } from 'react'
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import AddIcon from '@material-ui/icons/Add';
-import { Button } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton';
+import {selectModalIsShown} from '../../features/coinList/pageSlice' 
 
 
 import './Crypto.scss'
 import axios from '../../axios';
+import { useSelector } from 'react-redux';
 
 const Crypto = ({id,name, symbol, rank}) => {
   const [coinData, setCoinData] = useState([])
+
+  const modalIsShow = useSelector(selectModalIsShown)
 
   useEffect(()=> {
     async function fetchData(){
