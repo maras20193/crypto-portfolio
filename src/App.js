@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import SideStats from './components/SideStats/SideStats';
 import CryptoList from './components/CryptoList/CryptoList';
+import WalletList from './components/WalletList/WalletList'
 import ModalMy from './components/Modal/Modal';
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
               <CryptoList/>
             </Route>
             <Route path="/portfolio">
-              <div>Portrolio</div>
+              <WalletList/>
             </Route>
           </Switch>
         </div>

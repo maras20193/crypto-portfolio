@@ -65,8 +65,8 @@ const CryptoList = () => {
 
   return ( 
     <div className="cryptoList__wrapper">
-      <ul className="cryptoList__header">
-      </ul>
+      <div className="cryptoList__header">
+      </div>
       <ul className="cryptoList__mainList">
         {generateCoinList(10)}
       </ul>

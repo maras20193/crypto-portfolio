@@ -1,31 +1,35 @@
-.cryptoRow {
+.walletCoin {
   display: flex;
-  align-items: center;
   justify-content: flex-start;
+  align-items: center;
   padding: 20px;
+  padding-left: 5px;
   border-bottom: 2px solid whitesmoke;
-
-  -webkit-user-select: none;  /* Chrome all / Safari all */
-  -moz-user-select: none;     /* Firefox all */
-  -ms-user-select: none;      /* IE 10+ */
-  user-select: none;  
-
-  
   @media(min-width:1024px) {
     padding-left: 100px;
   }
-
-
+  
   &:hover {
     background-color: whitesmoke;
     
   }
 
+  &--info {
+    color: rgb(99, 99, 99);
+    font-size: 14px;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+
+
+
   &__logo {
     width: 32px;
     height: 32px;
     margin-right: 20px;
-    margin-left: 10px;
 
     @media(min-width:1024px) {
       margin-right: 40px;
@@ -36,6 +40,7 @@
       object-fit: contain;
     }
   }
+
   &__info {
     flex-basis:33%;
     max-width: 200px;
@@ -53,12 +58,7 @@
       max-width: 100px;
     }
 
-    &--rank {
-      max-width: 30px;
-    }
 
   }
-
-
 
 }

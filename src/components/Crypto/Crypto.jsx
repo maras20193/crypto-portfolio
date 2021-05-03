@@ -11,7 +11,7 @@ import './Crypto.scss'
 import axios from '../../axios';
 import { useSelector } from 'react-redux';
 
-const Crypto = ({id,name, symbol, rank}) => {
+const Crypto = ({id,name, symbol, rank, walletType}) => {
   const [coinData, setCoinData] = useState([])
 
   const modalIsShow = useSelector(selectModalIsShown)
@@ -43,7 +43,7 @@ const Crypto = ({id,name, symbol, rank}) => {
 
   return ( 
     <div className="cryptoRow">
-      <div className="cryptoRow__info cryptoRow__info--rank">{rank}</div>
+      <div className="cryptoRow__info cryptoRow__info--rank">{rank}</div> 
       <div className="cryptoRow__logo">
         <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png" alt=""/>
       </div>
