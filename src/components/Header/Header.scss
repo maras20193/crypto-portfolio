@@ -1,5 +1,7 @@
 .header {
   display: flex;
+  align-items: center;
+  height: 80px;
   width: 100%;
   border-bottom: 1px solid #f1f1f1;
 
@@ -9,16 +11,17 @@
     align-items: center;
     width: 80px;
     height: 50px;
-    padding-left: 15px;
+    padding-left: 3%;
   
   }
 
   &__logo {
-    height: 40px;
+    height: 70px;
     object-fit: contain;
   }
 
   &__nav {
+    margin-left: 4%;
     flex-grow: 1;
     display: flex;
     justify-content: flex-start;
@@ -52,11 +55,12 @@
   &__searchBar {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     margin-left: 10px;
+    margin-right: 2%;
     background-color: #eee;
-    border-radius: 10px;
-    padding-left: 10px;
+    border-radius: 5px;
+    padding: 10px;
 
     input {
       flex-grow: 1;
@@ -76,6 +80,7 @@
     justify-content: center;
     align-items: center;
     margin: 5px;
+    margin-right: 3%;
   }
 
 

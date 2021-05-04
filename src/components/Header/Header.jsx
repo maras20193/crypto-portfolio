@@ -15,12 +15,13 @@ const Header = () => {
   return ( 
     <div className="header">
       <div className="header__logoWrapper">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/BTC_Logo.svg/2000px-BTC_Logo.svg.png" alt="" className="header__logo"/>
+        <img 
+        // src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/BTC_Logo.svg/2000px-BTC_Logo.svg.png" 
+        src="https://cdn.pixabay.com/photo/2017/08/14/14/38/bitcoin-2640692_960_720.png"alt="" className="header__logo"/>
       </div>
       <ul className="header__nav">
-        <li><NavLink exact to="/">Crypto</NavLink></li>
-        <li><NavLink to="/watchlist">Watch</NavLink></li>
-        <li><NavLink to="/portfolio">Portf</NavLink></li>
+        <li><NavLink exact to="/">Cryptocurrencies</NavLink></li>
+        <li><NavLink to="/portfolio">Portfolio</NavLink></li>
         
       </ul>
       <div className="header__searchBar">

@@ -45,7 +45,12 @@ const Crypto = ({id,name, symbol, rank, walletType}) => {
     <div className="cryptoRow">
       <div className="cryptoRow__info cryptoRow__info--rank">{rank}</div> 
       <div className="cryptoRow__logo">
-        <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png" alt=""/>
+        <img 
+        src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+
+        // src="https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png" 
+        
+        alt=""/>
       </div>
       <div className="cryptoRow__info">{name}</div>
       <div className="cryptoRow__info">{symbol}</div>
