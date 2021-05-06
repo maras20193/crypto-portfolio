@@ -5,13 +5,18 @@ import './Header.scss'
 import SearchIcon from '@material-ui/icons/Search';
 import { IconButton } from '@material-ui/core';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink
+  NavLink, useHistory
 } from "react-router-dom";
 
+import { auth } from '../../firebase'
+
 const Header = () => {
+  const history =useHistory();
+
+  const logOut = () => {
+    auth.signOut();
+    history.push('/');
+  }
   return ( 
     <div className="header">
       <div className="header__logoWrapper">
@@ -34,7 +39,8 @@ const Header = () => {
       </div>
       <div className="header__login">
         <Button 
-        variant="contained" color="primary">Log in</Button>
+        onClick={logOut}
+        variant="contained" color="primary">Log out</Button>
       </div>
     </div>
     );
