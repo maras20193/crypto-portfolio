@@ -27,14 +27,15 @@ const WalletCoin = ({name, symbol, price, buingPrice, holding, infoType}) => {
       </div>
       <div className="walletCoin__info">            {infoType ? null :symbol}
       </div>
-      <div className="walletCoin__info">{infoType ? "Holding" :holding}
-      </div>
       <div className="walletCoin__info walletCoin__info--price">
         {infoType ? "Price" : `$${price}`}
       </div>
       <div className="walletCoin__info 
       walletCoin__info--price">
         {infoType ? "Buying Price " :`$${buingPrice}`}
+      </div>
+      <div className="walletCoin__info walletCoin__info--holding">{infoType ? "Holding" :holding}
+      <span>{` ${symbol}`}</span>
       </div>
       {infoType
       ? <div className="walletCoin__info walletCoin__info--changeToday">

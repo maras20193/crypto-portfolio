@@ -1,10 +1,89 @@
 .modal {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70%;
-  height: 70vh;
-  background-color: red;
+  width: 400px;
+  height: 430px;
+  background-color: rgb(245,245,245);
+  box-shadow: 2px 2px 3px 3px rgba(0,0,0,0.1);
   z-index: 6;
+  text-align: center;
+  font-weight: 500;
+  border-radius: 5px;
+  
+
+  &__exit {
+    right: -80px;
+
+    .MuiSvgIcon-root {
+      color: white;
+    }
+
+  }
+
+  &__header {
+    background-color: #303F9F;
+    color: white;
+    border-radius: 5px;
+    font-size: 26px; 
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__cryptoName {
+    font-size: 24px;
+    text-align: center;
+    margin: 20px;
+    
+    span {
+      margin-left: 10px;
+      color: gray;
+      font-size: 18px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    input {
+      align-self: center;
+      padding: 10px;
+      margin: 10px;
+      outline-width: 0;
+      height: 40px;
+      width: 70%;
+      // max-width: 400px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      margin: 0 auto;
+      margin-top: 15px;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      background-color: #303F9F;
+      border: none;
+      color: white;
+      cursor: pointer;
+      outline: none;
+      border-radius: 5px;
+      transition: 0.2s;
+      width: 50%;
+
+      &:hover {
+        background-color: #263388;
+      }
+    }
+  }
+
 }

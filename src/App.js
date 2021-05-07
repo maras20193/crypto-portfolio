@@ -11,6 +11,7 @@ import SideStats from './components/SideStats/SideStats';
 import CryptoList from './components/CryptoList/CryptoList';
 import WalletList from './components/WalletList/WalletList'
 import LoginScreen from './components/LoginScreen/LoginScreen';
+import Modal from './components/Modal/Modal'
 
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from './features/user/userSlice';

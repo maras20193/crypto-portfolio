@@ -10,11 +10,11 @@ import {selectModalIsShown} from '../../features/coinList/pageSlice'
 import './Crypto.scss'
 import axios from '../../axios';
 import { useSelector } from 'react-redux';
+import Modal from '../Modal/Modal';
 
 const Crypto = ({id,name, symbol, rank, walletType}) => {
   const [coinData, setCoinData] = useState([])
-
-  const modalIsShow = useSelector(selectModalIsShown)
+  const [modalIsShow,setModalIsShow] = useState(false)
 
   useEffect(()=> {
     async function fetchData(){
@@ -24,6 +24,13 @@ const Crypto = ({id,name, symbol, rank, walletType}) => {
     }
     fetchData()
   }, [])
+
+  const showAddCryptoModal = () => {
+    setModalIsShow(true)
+  }
+  const hideAddCryptoModal = () => {
+    setModalIsShow(false)
+  }
 
   const {close, open} = coinData;
 
@@ -61,9 +68,20 @@ const Crypto = ({id,name, symbol, rank, walletType}) => {
         {arrowIcon}
         {`${changeToday}%`}
       </div>
-      <IconButton color="primary" size="small">
+      <IconButton 
+      onClick={showAddCryptoModal}
+      color="primary" 
+      size="small">
         <AddIcon fontSize="large"/>
       </IconButton>
+      {modalIsShow 
+      ? <Modal 
+        name={name}
+        symbol={symbol}
+        price={close}
+        hideModal={hideAddCryptoModal}/> 
+      : null}
+      
     </div> );
 }
  

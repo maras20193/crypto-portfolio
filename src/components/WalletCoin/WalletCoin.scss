@@ -58,6 +58,15 @@
       max-width: 100px;
     }
 
+    &--holding {
+      text-align: end;
+
+      span {
+        font-size: 12px;
+        color: gray;
+      }
+    }
+
 
   }
 
