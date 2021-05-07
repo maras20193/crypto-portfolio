@@ -58,8 +58,12 @@
       max-width: 100px;
     }
 
-    &--holding {
+    &--allPrice {
       text-align: end;
+    }
+
+    &--holding {
+      text-align: center;
 
       span {
         font-size: 12px;

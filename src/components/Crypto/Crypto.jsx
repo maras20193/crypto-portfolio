@@ -76,6 +76,7 @@ const Crypto = ({id,name, symbol, rank, walletType}) => {
       </IconButton>
       {modalIsShow 
       ? <Modal 
+        id={id}
         name={name}
         symbol={symbol}
         price={close}
