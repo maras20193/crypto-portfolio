@@ -1,12 +1,13 @@
 .sideStats {
   text-align: center;
-  width: 200px;
+  width: 300px;
   min-width: 200px;
   border-right: 1px solid whitesmoke;
   padding-top: 15px;
 
   &__info {
-    margin: 30px 15px;
+    margin: 30px auto;
+    width: 75%;
     padding: 15px 0;
     font-weight: 500;
     font-size: 20px;

@@ -2,6 +2,8 @@ import React from 'react'
 
 import './SideStats.scss'
 
+import DonutChart from '../Chart/DonutChart'
+
 const SideStats = () => {
   return ( 
     <div className="sideStats">
@@ -13,6 +15,7 @@ const SideStats = () => {
         <p className="sideStats__title">Overall profit [%]</p>
         <p className="sideStats__desc">246%</p>
       </div>
+      <DonutChart/>
     </div>
    );
 }

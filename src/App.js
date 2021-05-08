@@ -18,6 +18,10 @@ import { selectUser } from './features/user/userSlice';
 import { auth } from './firebase';
 import {LOG_IN, LOG_OUT} from './features/user/userSlice'
 
+import axios from './axios'
+import requests from './requests';
+import { SET_COIN_LIST } from './features/coinList/coinList';
+
 function App() {
 const user = useSelector(selectUser);
 const dispatch = useDispatch()
@@ -36,6 +40,16 @@ useEffect(() => {
   })
 },[dispatch])
 
+useEffect(() => {
+  async function fetchData(){
+    const request = await axios.get(requests.fetchCoins);
+    console.log(request)
+    dispatch(SET_COIN_LIST(request.data))
+    // setCoins(request.data)
+  }
+  fetchData()
+}, [])
+
   return (
     <div className="App">
       <Router>
@@ -50,6 +64,9 @@ useEffect(() => {
               </Route>
               <Route path="/portfolio">
                 <WalletList/>
+              </Route>
+              <Route path="/cryptocurrencies/:id">
+                <div>jedna krypto</div>
               </Route>
           </Switch>
         </div>

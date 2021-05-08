@@ -4,7 +4,7 @@ import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import AddIcon from '@material-ui/icons/Add';
 import IconButton from '@material-ui/core/IconButton';
-import {selectModalIsShown} from '../../features/coinList/pageSlice' 
+import {selectModalIsShown} from '../../features/page/pageSlice' 
 
 
 import './Crypto.scss'
@@ -48,12 +48,16 @@ const Crypto = ({id,name, symbol, rank, walletType}) => {
     ? <ArrowDropUpIcon/> 
     : <ArrowDropDownIcon/>
 
+
   return ( 
     <div className="cryptoRow">
       <div className="cryptoRow__info cryptoRow__info--rank">{rank}</div> 
       <div className="cryptoRow__logo">
         <img 
-        src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+
+        // src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+
+        src={`https://cryptoicons.org/api/icon/${symbol.toLowerCase()}/200`}
 
         // src="https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png" 
         

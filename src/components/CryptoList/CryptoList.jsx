@@ -15,24 +15,15 @@ import {
   selectPageIndex, 
   NEXT, 
   BACK, 
-  CHOOSE_PAGE } from '../../features/coinList/pageSlice'
+  } from '../../features/page/pageSlice'
+import { selectSearchCoin,selectCoinList, SET_COIN_LIST } from '../../features/coinList/coinList';
 
 const CryptoList = () => {
-  const [coins, setCoins] = useState([]);
-  // const [pageIndex, setPageIndex] = useState(1)
   const dispatch = useDispatch()
-  const pageIndex = useSelector(selectPageIndex)
 
-  useEffect(() => {
-    async function fetchData(){
-      const request = await axios.get(requests.fetchCoins);
-      console.log(request)
-      setCoins(request.data)
-    }
-    fetchData()
-    console.log(coins)
-    console.log('rrrr')
-  }, [])
+  const pageIndex = useSelector(selectPageIndex)
+  const searchCoin = useSelector(selectSearchCoin)
+  const coins = useSelector(selectCoinList);
 
   const handleNext = () => {
     dispatch(NEXT())
@@ -41,8 +32,6 @@ const CryptoList = () => {
   const handleBack = () => {
     dispatch(BACK())
   }
-
-
 
   const generateCoinList = (value) => {
     const coinsOnChoosenPage = coins.slice(pageIndex * value)
@@ -59,6 +48,7 @@ const CryptoList = () => {
         )
       }
     })
+
     return coinsList
   }
   

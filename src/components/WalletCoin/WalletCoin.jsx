@@ -32,7 +32,7 @@ const WalletCoin = ({id,name, symbol,  buingPrice, holding, infoType}) => {
   return ( 
     <div className={infoType ? "walletCoin walletCoin--info" :"walletCoin"}>
       <div className="walletCoin__logo">
-      {infoType ? null :<img src="https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png" alt=""/> }
+      {infoType ? null :<img src={`https://cryptoicons.org/api/icon/${symbol.toLowerCase()}/200`} alt=""/> }
         </div>
       <div className="walletCoin__info">
         {infoType ? "Name" : name}
