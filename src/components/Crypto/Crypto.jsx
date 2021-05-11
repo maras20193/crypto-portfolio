@@ -5,6 +5,9 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import AddIcon from '@material-ui/icons/Add';
 import IconButton from '@material-ui/core/IconButton';
 import {selectModalIsShown} from '../../features/page/pageSlice' 
+import {
+  Link, useHistory
+} from "react-router-dom";
 
 
 import './Crypto.scss'
@@ -63,7 +66,13 @@ const Crypto = ({id,name, symbol, rank, walletType}) => {
         
         alt=""/>
       </div>
-      <div className="cryptoRow__info">{name}</div>
+      <div className="cryptoRow__info">
+        <Link 
+          to={`/cryptocurrencies/${id}`}
+          >{name}
+        </Link>
+      </div>
+
       <div className="cryptoRow__info">{symbol}</div>
       <div className="cryptoRow__info cryptoRow__info--price">{`$${price}`}</div>
       <div 

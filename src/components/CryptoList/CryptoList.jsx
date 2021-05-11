@@ -34,8 +34,8 @@ const CryptoList = () => {
   }
 
   const generateCoinList = (value) => {
-    const coinsOnChoosenPage = coins.slice(pageIndex * value)
-    const coinsList = coinsOnChoosenPage.map((coin,index) => {
+    const coinsOnChoosenPage = coins && coins.slice(pageIndex * value)
+    const coinsList = coinsOnChoosenPage && coinsOnChoosenPage.map((coin,index) => {
       while (index < value) {
         return (
           <Crypto

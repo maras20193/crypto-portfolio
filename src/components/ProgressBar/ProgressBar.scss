@@ -1,0 +1,45 @@
+.progressBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: blue;
+
+    &__info {
+        font-size: 14px;
+        font-weight: 500;
+        color: grey;
+        margin-right: 6px;
+
+        span {
+            font-size: 16px;
+            color: black;
+            margin-left: 2px;
+        }
+    }
+
+    &__bar {
+        position: relative;
+        height: 10px;
+        border-radius: 10px;
+        background-color: #e8eef8;
+    }
+    
+    &__fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        border-radius: 10px 0 0 10px;
+        background-color: #CFD6E4;
+        height: 10px;
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 1px;
+        left: -12px;
+        color: #CFD6E4;
+
+    }
+}
+

@@ -41,6 +41,15 @@
     max-width: 200px;
     font-weight: 500;
 
+  a {
+    text-decoration: none;
+    color: black;
+
+  //   &:focus, &:hover, &:visited, &:link, &:active {
+  //   text-decoration: none;
+  // }
+}
+
     &--changeToday {
       display: flex;
       justify-content: center;

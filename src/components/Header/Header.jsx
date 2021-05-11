@@ -38,7 +38,7 @@ const Header = () => {
       <ul className="header__nav">
         <li><NavLink exact to="/">Cryptocurrencies</NavLink></li>
         <li><NavLink to="/portfolio">Portfolio</NavLink></li>
-        <li><NavLink to="/cryptocurrencies">Test</NavLink></li>
+        {/* <li><NavLink to="/cryptocurrencies">Test</NavLink></li> */}
         
       </ul>
       <form 

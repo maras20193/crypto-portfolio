@@ -21,6 +21,7 @@ import {LOG_IN, LOG_OUT} from './features/user/userSlice'
 import axios from './axios'
 import requests from './requests';
 import { SET_COIN_LIST } from './features/coinList/coinList';
+import CryptoPage from './components/CryptoPage/CryptoPage';
 
 function App() {
 const user = useSelector(selectUser);
@@ -66,7 +67,7 @@ useEffect(() => {
                 <WalletList/>
               </Route>
               <Route path="/cryptocurrencies/:id">
-                <div>jedna krypto</div>
+                <CryptoPage/>
               </Route>
           </Switch>
         </div>
