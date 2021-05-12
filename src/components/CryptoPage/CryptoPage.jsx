@@ -6,6 +6,8 @@ import axios from '../../axios'
 
 import './CryptoPage.scss'
 
+import CryptoChart from '../CryptoChart/CryptoChart' 
+
 import ProgressBar from '../ProgressBar/ProgressBar'
 
 // https://api.coinpaprika.com/v1/coins/btc-bitcoin/ohlcv/historical?start=2020-05-10&end=2021-05-10
@@ -42,6 +44,8 @@ const CryptoPage = (props) => {
 
     }, [])
 
+    
+
     console.log(historyData)
     console.log(tickers)
 
@@ -54,19 +58,35 @@ const CryptoPage = (props) => {
         }
 
     const price = tickers 
-        ? `$${(tickers.quotes.USD.price).toFixed(2)}` 
+        ? (tickers.quotes.USD.price).toFixed(2) 
         : null;
 
     const change24h = tickers 
     ? `${(tickers.quotes.USD.percent_change_24h).toFixed(2)}%` 
     : null;
 
+    const chartData = historyData && historyData.map(day => {
+        return {
+            x: day.time_open,
+            y: [
+                (day.open).toFixed(2),
+                (day.high).toFixed(2),
+                (day.low).toFixed(2),
+                (day.close).toFixed(2),
+            ]
+        }
+    })
+
+    console.log(chartData)
+
     return (
         <div className="cryptoPage">
             <div className="cryptoPage__container cryptoPage__mainInfo">
                 <div className="cryptoPage__flexRow">
                 <div className="cryptoPage__logoWrapper">
-                    <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="" />
+                    <img 
+                    // src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt=""
+                    src={`https://cryptoicons.org/api/icon/${tickers && tickers.symbol.toLowerCase()}/200`} />
                 </div>
                 <div className="cryptoPage__name">{tickers && tickers.name}
                     <span>{tickers && tickers.symbol}</span>
@@ -80,25 +100,32 @@ const CryptoPage = (props) => {
 
             </div>
             <div className="cryptoPage__container cryptoPage__sideInfo">
+            <div className="cryptoPage__flexRow">
+                <div className="cryptoPage__header">Price:</div>
+            </div>
                 <div className="cryptoPage__flexRow">
                     <div className="cryptoPage__price">
-                        {price}
+                        {`$${price}`}
                         <span 
                         className="cryptoPage__moreInfo"
                         style={style}>{change24h}</span>
                     </div>
                 </div>
                 <div className="cryptoPage__flexRow">
+                <div className="cryptoPage__header">Last 24h:</div>
+            </div>
+                <div className="cryptoPage__flexRow">
                     <ProgressBar 
-                    low={50000}
-                    high={80000}
-                    now={65000}
+                    low={historyData && (historyData[364].low).toFixed(2)}
+                    high={historyData && (historyData[364].high).toFixed(2)}
+                    now={price}
                     size={150}
                     />
                 </div>
             </div>
             <div className="cryptoPage__container cryptoPage__chartWrapper">
-
+                {chartData && <CryptoChart data={chartData}/>}
+                
             </div>
         </div>
     )

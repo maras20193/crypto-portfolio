@@ -6,6 +6,8 @@ import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 
 const ProgressBar = ({low, high, now, size}) => {
 
+    if (now > high) high = now;
+
     const fillPixels = ((now - low) / (high- low)) * size;
     const barSizeStyle = {
         width: `${size}px`,
@@ -18,6 +20,7 @@ const ProgressBar = ({low, high, now, size}) => {
         // 12px Icon svg offset
         left: `${fillPixels - 12}px`
     }
+
     return (
     <div className="progressBar">
         <div className="progressBar__info">
